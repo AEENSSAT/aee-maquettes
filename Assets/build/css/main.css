@@ -104,11 +104,6 @@ body {
   height: 200vh;
 }
 /*********/
-#wrapper {
-  position: absolute;
-  top: 100vh;
-  width: 100%;
-}
 #wrapper > header {
   height: 100px;
   width: 100%;
@@ -173,16 +168,21 @@ body {
 #wrapper > header > nav > ul > li > a:hover::before {
   left: 0%;
 }
-#wrapper > #presentation {
+#wrapper.homepage {
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+}
+#wrapper.homepage > #presentation {
   height: 75vh;
   background-image: linear-gradient(to bottom, rgba(55, 55, 55, 0.8), rgba(55, 55, 55, 0.8)), url('../imgs/ploumanach.jpg');
   background-size: cover;
 }
-#wrapper > #actus {
+#wrapper.homepage > #actus {
   background: #f1f1f1;
   padding-top: 30px;
 }
-#wrapper > #actus h2 {
+#wrapper.homepage > #actus h2 {
   margin: 0;
   text-transform: uppercase;
   font-size: 60px;
@@ -191,26 +191,26 @@ body {
   font-weight: normal;
   color: #f29400;
 }
-#wrapper > #actus article {
+#wrapper.homepage > #actus article {
   display: inline-block;
   position: relative;
   margin: 7px 0;
   border-radius: 1px;
   width: 24%;
 }
-#wrapper > #actus article:nth-child(3n) {
+#wrapper.homepage > #actus article:nth-child(3n) {
   color: #f29400;
   background: white;
 }
-#wrapper > #actus article:nth-child(3n+1) {
+#wrapper.homepage > #actus article:nth-child(3n+1) {
   color: white;
   background: #f29400;
 }
-#wrapper > #actus article:nth-child(3n+2) {
+#wrapper.homepage > #actus article:nth-child(3n+2) {
   color: #f29400;
   background: #e5e5e5;
 }
-#wrapper > #actus article .flag {
+#wrapper.homepage > #actus article .flag {
   position: absolute;
   left: 0;
   top: 25px;
@@ -223,27 +223,27 @@ body {
   font-family: 'sansationregular', sans-serif;
   color: white;
 }
-#wrapper > #actus article .flag-red {
+#wrapper.homepage > #actus article .flag-red {
   background: #e74c3c;
 }
-#wrapper > #actus article .flag-green {
+#wrapper.homepage > #actus article .flag-green {
   background: #2ecc71;
 }
-#wrapper > #actus article img {
+#wrapper.homepage > #actus article img {
   width: 100%;
 }
-#wrapper > #actus article a {
+#wrapper.homepage > #actus article a {
   color: inherit;
   text-decoration: none;
 }
-#wrapper > #actus article p {
+#wrapper.homepage > #actus article p {
   margin: 0;
   font-size: 25px;
   padding: 4px 10px;
   font-family: 'roboto', sans-serif;
   font-weight: 300;
 }
-#wrapper > #actus article span.date {
+#wrapper.homepage > #actus article span.date {
   text-align: right;
   width: 97%;
   display: inline-block;
@@ -251,10 +251,10 @@ body {
   font-size: 12px;
   font-family: 'sansationregular', sans-serif;
 }
-#wrapper > #actus .centerDiv .buttons {
+#wrapper.homepage > #actus .centerDiv .buttons {
   text-align: center;
 }
-#wrapper > #actus .centerDiv a.more-actus {
+#wrapper.homepage > #actus .centerDiv a.more-actus {
   display: inline-block;
   border: 2px solid #f29400;
   width: 45%;
@@ -268,32 +268,32 @@ body {
   margin: 10px 0 20px 0;
   transition: all .5s ease;
 }
-#wrapper > #actus .centerDiv a.more-actus:hover {
+#wrapper.homepage > #actus .centerDiv a.more-actus:hover {
   background: #f29400;
   color: white;
 }
-#wrapper > #contact {
+#wrapper.homepage > #contact {
   background-image: linear-gradient(to bottom, rgba(55, 55, 55, 0.8), rgba(55, 55, 55, 0.8)), url('../imgs/ploumanach.jpg');
   background-size: cover;
   padding: 20px 0;
 }
-#wrapper > #contact .centerDiv {
+#wrapper.homepage > #contact .centerDiv {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
 }
-#wrapper > #contact .centerDiv > div {
+#wrapper.homepage > #contact .centerDiv > div {
   width: 50%;
 }
-#wrapper > #contact h2 {
+#wrapper.homepage > #contact h2 {
   font-family: 'sansationregular', sans-serif;
   color: white;
 }
-#wrapper > #contact .form input {
+#wrapper.homepage > #contact .form input {
   display: block;
 }
-#wrapper > #contact .form input[type=text] {
+#wrapper.homepage > #contact .form input[type=text] {
   font-family: 'sansationregular', sans-serif;
   width: 400px;
   margin: 10px 0;
@@ -301,7 +301,7 @@ body {
   height: 35px;
   padding: 4px;
 }
-#wrapper > #contact .form input[type=email] {
+#wrapper.homepage > #contact .form input[type=email] {
   font-family: 'sansationregular', sans-serif;
   width: 400px;
   margin: 10px 0;
@@ -309,13 +309,13 @@ body {
   height: 35px;
   padding: 4px;
 }
-#wrapper > #contact .form textarea {
+#wrapper.homepage > #contact .form textarea {
   font-family: 'sansationregular', sans-serif;
   width: 400px;
   margin: 10px 0;
   border: 3px solid #f29400;
 }
-#wrapper > #contact .form input[type=submit] {
+#wrapper.homepage > #contact .form input[type=submit] {
   height: 35px;
   padding: 4px;
   background: white;
@@ -325,7 +325,83 @@ body {
   font-family: 'sansationregular', sans-serif;
   transition: all .5s ease;
 }
-#wrapper > #contact .form input[type=submit]:hover {
+#wrapper.homepage > #contact .form input[type=submit]:hover {
   background: #f29400;
   color: white;
+}
+#wrapper.article {
+  background: #f1f1f1;
+}
+#wrapper.article section[role="main"] header {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+#wrapper.article section[role="main"] header img.head {
+  width: 100%;
+}
+#wrapper.article section[role="main"] header:before {
+  content: '';
+  background: linear-gradient(to bottom, rgba(55, 55, 55, 0), rgba(0, 0, 0, 0.6) 90%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#wrapper.article section[role="main"] .content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+#wrapper.article section[role="main"] .content article h2 {
+  font-family: 'sansationregular', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  margin-left: -2.5px;
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  padding: 25px;
+  text-align: left;
+  margin-top: 0;
+  color: #f29400;
+}
+#wrapper.article section[role="main"] .content article .centerDiv {
+  background: white;
+  position: relative;
+  border: 1px solid grey;
+  border-radius: 2px;
+  top: -200px;
+  width: 800px;
+}
+#wrapper.article section[role="main"] .content article .centerDiv h3 {
+  font-size: 30px;
+  font-family: Georgia, 'Droid serif', serif;
+  padding: 15px;
+  width: 700px;
+  margin: auto;
+}
+#wrapper.article section[role="main"] .content article .centerDiv p {
+  padding: 15px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  line-height: 2;
+  letter-spacing: -0.003em;
+  font-family: Georgia, 'Droid serif', serif;
+  width: 700px;
+  margin: auto;
+}
+#wrapper.article section[role="main"] .content aside {
+  width: 300px;
+  padding: 15px;
+}
+#wrapper.article section[role="main"] .content aside .aside-part {
+  background: white;
+  border: 1px solid grey;
+  margin: 10px;
+  border-radius: 2px;
+  padding: 5px;
 }
