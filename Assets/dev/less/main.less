@@ -407,7 +407,7 @@ html, body {
                     position: relative;
                     border: 1px solid @grey;
                     border-radius: 2px;
-                    top: -200px;
+                    top: -300px;
 
                     width: 800px;
 
@@ -449,4 +449,115 @@ html, body {
 
     }
 
+}
+
+#wrapper.categories {
+
+    background: @lightgrey;
+
+    section[role="main"]{
+        header{
+
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+
+            img.head {
+                width: 100%;
+            }
+
+            &:before{
+                content: '';
+                background: linear-gradient(to bottom, rgba(55, 55, 55, 0), rgba(0, 0, 0, 0.6) 90%);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+        }
+
+        .content {
+            margin: auto;
+
+            background: white;
+            position: relative;
+            border: 1px solid @grey;
+            border-radius: 2px;
+            top: -300px;
+
+            width: 1100px;
+
+            h2 {
+                font-size: 70px;
+                text-align: center;
+                font-family: @sansationRegular, 'Droid serif', serif;
+                padding-left: 10px;
+                color: @orange;
+            }
+
+            article {
+
+                border-bottom: 1px solid @grey;
+                padding: 10px;
+                height: 300px;
+
+                display: flex;
+                flex-direction: row;
+
+                img {
+                    max-height: 300px;
+                }
+
+                section {
+                    h3 {
+                        font-family: @sansationRegular;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-size: 40px;
+                        margin-left: -2.5px;
+                        line-height: 1.04;
+                        letter-spacing: -.028em;
+                        padding: 25px 25px 0px 10px;
+                        text-align: left;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        color: @orange;
+
+                        a {
+                            text-decoration: none;
+                            color: inherit;
+                        }
+                    }
+
+                    p {
+                        padding: 15px 15px 0 15px;
+                        font-weight: 400;
+                        font-style: normal;
+                        font-size: 14px;
+                        line-height: 2;
+                        letter-spacing: -0.003em;
+                        font-family: Georgia, 'Droid serif', serif;
+                        margin: auto;
+                    }
+
+                    & > a {
+                        padding-left: 15px;
+                        margin-top: 5px;
+                        display: block;
+                        color: @orange;
+                        font-family: Georgia, 'Droid serif', serif;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                }
+
+                &:nth-child(2){
+                    border-top: 1px solid @grey;
+                }
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
 }
