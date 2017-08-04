@@ -5,6 +5,7 @@
 @lightgrey: #f1f1f1;
 @white: white;
 @sansationRegular: 'sansationregular', sans-serif;
+@sansationBold: 'sansationbold', sans-serif;
 @prismaRegular: 'prismaregular', sans-serif;
 @roboto: 'roboto', sans-serif;
 
@@ -643,6 +644,60 @@ html, body {
             background: white;
             border: 1px solid @grey;
             margin: 10px;
+        }
+    }
+}
+
+
+
+#wrapper.login {
+    section[role="main"] {
+        height:calc(100vh);
+        background: url('../imgs/ploumanach.jpg');
+        background-size: cover;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .login-form {
+            width: 500px;
+            background: @lightgrey;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid @grey;
+            padding-bottom: 50px;
+
+            h2 {
+                font-family: @sansationBold;
+                color: @orange;
+                font-size: 35px;
+            }
+
+            input {
+                width: 400px;
+                height: 40px;
+                margin: 10px 0;
+                border: 1px solid @orange;
+                padding: 3px;
+                box-sizing: border-box;
+                font-family: @sansationRegular;
+                font-size: 20px;
+
+                &[type="submit"]{
+                    background: white;
+
+                    position: relative;
+                    overflow: hidden;
+                    transition: all .5s ease;
+                    color: @orange;
+
+                    &:hover {
+                        background: @orange;
+                        color: @white;
+                    }
+                }
+            }
         }
     }
 }

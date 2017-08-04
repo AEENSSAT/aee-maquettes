@@ -559,3 +559,48 @@ body {
   border: 1px solid grey;
   margin: 10px;
 }
+#wrapper.login section[role="main"] {
+  height: calc(100vh);
+  background: url('../imgs/ploumanach.jpg');
+  background-size: cover;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+#wrapper.login section[role="main"] .login-form {
+  width: 500px;
+  background: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid grey;
+  padding-bottom: 50px;
+}
+#wrapper.login section[role="main"] .login-form h2 {
+  font-family: 'sansationbold', sans-serif;
+  color: #f29400;
+  font-size: 35px;
+}
+#wrapper.login section[role="main"] .login-form input {
+  width: 400px;
+  height: 40px;
+  margin: 10px 0;
+  border: 1px solid #f29400;
+  padding: 3px;
+  box-sizing: border-box;
+  font-family: 'sansationregular', sans-serif;
+  font-size: 20px;
+}
+#wrapper.login section[role="main"] .login-form input[type="submit"] {
+  background: white;
+  position: relative;
+  overflow: hidden;
+  transition: all .5s ease;
+  color: #f29400;
+}
+#wrapper.login section[role="main"] .login-form input[type="submit"]:hover {
+  background: #f29400;
+  color: white;
+}
