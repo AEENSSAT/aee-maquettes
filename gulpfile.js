@@ -44,7 +44,7 @@ gulp.task('header', function(){
 gulp.task('build', ['header', 'styles', 'imgs', 'js']);
 
 gulp.task('watch', ['build'], function() {
-  gulp.watch('./Assets/dev/less/main.less', ['styles']);
+  gulp.watch('./Assets/dev/less/*.less', ['styles']);
   gulp.watch('./Assets/dev/imgs/*.*', ['imgs']);
   gulp.watch('./Assets/dev/js/*.js', ['js']);
 });
