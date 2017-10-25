@@ -616,6 +616,199 @@ body {
   border: 1px solid grey;
   margin: 10px;
 }
+#wrapper.club {
+  background: #f1f1f1;
+}
+#wrapper.club section[role="main"] header {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+#wrapper.club section[role="main"] header img.head {
+  width: 100%;
+}
+#wrapper.club section[role="main"] header:before {
+  content: '';
+  background: linear-gradient(to bottom, rgba(55, 55, 55, 0), rgba(0, 0, 0, 0.6) 90%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#wrapper.club section[role="main"] .content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+#wrapper.club section[role="main"] .content .main {
+  background: white;
+  position: relative;
+  border: 1px solid grey;
+  border-radius: 2px;
+  top: -300px;
+  width: 800px;
+}
+#wrapper.club section[role="main"] .content .presentation {
+  padding: 10px;
+  border-bottom: 1px solid #f1f1f1;
+}
+#wrapper.club section[role="main"] .content .presentation h2 {
+  font-family: 'sansationregular', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 70px;
+  margin-left: -2.5px;
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  padding: 25px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #f29400;
+}
+#wrapper.club section[role="main"] .content .presentation p {
+  padding: 15px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  line-height: 2;
+  letter-spacing: -0.003em;
+  font-family: Georgia, 'Droid serif', serif;
+  width: 700px;
+  margin: auto;
+}
+#wrapper.club section[role="main"] .content .first-article {
+  width: 100%;
+  padding: 15px 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 10px;
+}
+#wrapper.club section[role="main"] .content .first-article a {
+  text-decoration: none;
+  color: inherit;
+}
+#wrapper.club section[role="main"] .content .first-article h3 {
+  font-family: 'sansationregular', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 35px;
+  margin: 3px 0;
+  color: #f29400;
+}
+#wrapper.club section[role="main"] .content .first-article p {
+  line-height: 2;
+  font-size: 17px;
+  font-family: Georgia, 'Droid serif', serif;
+}
+#wrapper.club section[role="main"] .content .first-article:hover > section > a {
+  opacity: 1;
+}
+#wrapper.club section[role="main"] .content .first-article section > a {
+  display: block;
+  background: #f1f1f1;
+  width: 100%;
+  height: 15px;
+  margin: 0 5px;
+  padding: 5px 0;
+  text-align: center;
+  opacity: 0;
+  color: #f29400;
+  font-family: Georgia, 'Droid serif', serif;
+  font-size: 15px;
+  text-decoration: none;
+  transition: opacity ease .2s;
+}
+#wrapper.club section[role="main"] .content .first-article img {
+  width: 100%;
+}
+#wrapper.club section[role="main"] .content .grid-articles {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+#wrapper.club section[role="main"] .content .grid-articles article {
+  width: calc(50%);
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  transition: background .3s ease;
+}
+#wrapper.club section[role="main"] .content .grid-articles article:hover {
+  background: #f9f9f9;
+}
+#wrapper.club section[role="main"] .content .grid-articles article img {
+  width: 100%;
+}
+#wrapper.club section[role="main"] .content .grid-articles article:hover > section > a {
+  opacity: 1;
+}
+#wrapper.club section[role="main"] .content .grid-articles article section h3 {
+  font-family: 'sansationregular', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  margin-left: -2.5px;
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  padding: 25px 25px 0px 10px;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #f29400;
+}
+#wrapper.club section[role="main"] .content .grid-articles article section h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+#wrapper.club section[role="main"] .content .grid-articles article section p {
+  padding: 15px 15px 0 15px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 2;
+  letter-spacing: -0.003em;
+  font-family: Georgia, 'Droid serif', serif;
+  margin: auto;
+}
+#wrapper.club section[role="main"] .content .grid-articles article section > a {
+  display: block;
+  background: #f1f1f1;
+  width: 100%;
+  height: 15px;
+  margin: 0 5px;
+  padding: 5px 0;
+  text-align: center;
+  opacity: 0;
+  color: #f29400;
+  font-family: Georgia, 'Droid serif', serif;
+  font-size: 15px;
+  text-decoration: none;
+  transition: opacity ease .2s;
+}
+#wrapper.club section[role="main"] .content aside {
+  width: 300px;
+  padding: 15px;
+}
+#wrapper.club section[role="main"] .content aside .aside-part {
+  background: white;
+  border: 1px solid grey;
+  margin: 10px;
+  border-radius: 2px;
+  padding: 5px 10px;
+}
+#wrapper.club section[role="main"] .content aside .aside-part h3,
+#wrapper.club section[role="main"] .content aside .aside-part strong {
+  font-family: Georgia, 'Droid serif', serif;
+}
+#wrapper.club section[role="main"] .content aside .aside-part h3 {
+  color: #f29400;
+}
 #wrapper.login section[role="main"] {
   height: calc(100vh);
   background: url('../imgs/ploumanach.jpg');
