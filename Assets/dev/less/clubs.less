@@ -1,84 +1,168 @@
 #wrapper.clubs {
 
-    background: #f1f1f1;
+    section[role=main]{
 
-    section[role="main"]{
+        header{
 
-        h2 {
-            font-size: 70px;
-            text-align: center;
-            font-family: @sansationRegular, 'Droid serif', serif;
-            padding-left: 10px;
-            color: @orange;
-        }
+            height: 500px;
+            overflow: hidden;
+            position: relative;
 
-        & > section {
-            display: flex;
-            flex-direction: row;
+            img.head {
+                width: 100%;
+            }
 
-            aside {
-                nav {
-                    ul {
-
-                        padding: 0;
-                        margin: 0;
-
-                        li{
-                            display: block;
-                            padding: 0;
-                            margin: 10px 0;
-                            width: 300px;
-                            height: 60px;
-                            background: @orange;
-
-                            line-height: 60px;
-                            text-align: center;
-                            color: white;
-                            font-family: @sansationRegular, 'Droid serif', serif;
-                            text-transform: uppercase;
-                            font-size: 20px;
-
-                            position: relative;
-                            overflow: hidden;
-                            transition: all .5s ease;
-
-                            & > a {
-                                position: relative;
-                                z-index: 2;
-                                display: block;
-                                color: inherit;
-                                text-decoration: none;
-                            }
-
-                            &:hover {
-                                color: @orange;
-                            }
-
-                            &:hover::before{
-                                left: 0;
-                            }
-
-                            &::before{
-                                content: '';
-                                position: absolute;
-                                width: 300px;
-                                height: 60px;
-                                background: white;
-                                left: -300px;
-
-                                transition: all .5s ease;
-                            }
-                        }
-                    }
-                }
+            &:before{
+                content: '';
+                background: linear-gradient(to bottom, rgba(55, 55, 55, 0), rgba(0, 0, 0, 0.6) 90%);
+                width: 100%;
+                height: 100%;
+                position: absolute;
             }
         }
 
-        .content {
-            width: 700px;
+        #clubs {
             background: white;
-            border: 1px solid @grey;
-            margin: 10px;
+            position: relative;
+            border: 1px solid grey;
+            border-radius: 2px;
+            width: 1000px;
+            margin: auto;
+            top: -300px;
+        }
+    }
+
+    //background: linear-gradient(to bottom, rgba(55, 55, 55, 0.8), rgba(55, 55, 55, 0.8)), url('../imgs/ploumanach.jpg') center;
+    background-size: cover;
+
+    h2 {
+        font-size: 70px;
+        text-align: center;
+        font-family: @sansationRegular, 'Droid serif', serif;
+        padding-left: 10px;
+        color: @orange;
+    }
+
+    & > p {
+        padding: 15px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 19px;
+        line-height: 2;
+        letter-spacing: -0.003em;
+        font-family: Georgia, 'Droid serif', serif;
+        width: 700px;
+        margin: auto;
+    }
+
+    #clubs {
+        position: relative;
+
+        &:after{
+            width: 120%;
+            position: absolute;
+            left: -30px;
+            height: 300px;
+            bottom: -45px;
+            background: white;
+            border-bottom: 5px solid @orange;
+            transform: rotate(-3deg);
+            z-index: -1;
+            box-shadow: 0 0 25px 0px black;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            padding-bottom: 10px;
+        }
+
+        .clubs {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+
+                display: flex;
+
+            }
+
+            /*.club:nth-child(n) a{
+                flex-direction: row;
+            }
+
+            .club:nth-child(2n) a{
+                flex-direction: row-reverse;
+            }*/
+
+            @tileSize: 140px;
+            .club {
+                width: 50%;
+                box-sizing: border-box;
+                height: @tileSize;
+                text-align: center;
+                color: white;
+                font-family: 'sansationregular', sans-serif;
+                font-size: 30px;
+                position:relative;
+                overflow: hidden;
+
+                @media screen and (max-width: 1000px) {
+                    width: 100%;
+                }
+
+                .faceA{
+                    width:100%;
+                    height:@tileSize;
+                    position: absolute;
+                    z-index: 2;
+                    left: 0%;
+                    line-height: @tileSize;
+                    background: @orange;
+                    background-size: contain;
+                    text-shadow: 0 0 10px black;
+                    font-weight: bold;
+                }
+
+                .faceB{
+                    top:0;
+                    width:100%;
+                    height:@tileSize;
+                    position: absolute;
+                    z-index: 1;
+                    left: 100%;
+                    background: @orange;
+                    font-size: 17px;
+                    text-align:center;
+                    overflow: hidden;
+                    padding:2px;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        display: block;
+                        padding: 0 20px;
+                    }
+                }
+
+                .faceA, .faceB {
+                    transition: left ease .8s;
+                }
+
+                &:hover .faceA {
+                    left: -100%;
+                }
+
+                &:hover .faceB {
+                    left: 0%;
+                }
+            }
         }
     }
 }

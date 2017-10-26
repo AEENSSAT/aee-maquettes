@@ -552,69 +552,154 @@ body {
   padding: 5px;
 }
 #wrapper.clubs {
-  background: #f1f1f1;
+  background-size: cover;
 }
-#wrapper.clubs section[role="main"] h2 {
+#wrapper.clubs section[role=main] header {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+#wrapper.clubs section[role=main] header img.head {
+  width: 100%;
+}
+#wrapper.clubs section[role=main] header:before {
+  content: '';
+  background: linear-gradient(to bottom, rgba(55, 55, 55, 0), rgba(0, 0, 0, 0.6) 90%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#wrapper.clubs section[role=main] #clubs {
+  background: white;
+  position: relative;
+  border: 1px solid grey;
+  border-radius: 2px;
+  width: 1000px;
+  margin: auto;
+  top: -300px;
+}
+#wrapper.clubs h2 {
   font-size: 70px;
   text-align: center;
   font-family: 'sansationregular', sans-serif, 'Droid serif', serif;
   padding-left: 10px;
   color: #f29400;
 }
-#wrapper.clubs section[role="main"] > section {
+#wrapper.clubs > p {
+  padding: 15px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  line-height: 2;
+  letter-spacing: -0.003em;
+  font-family: Georgia, 'Droid serif', serif;
+  width: 700px;
+  margin: auto;
+}
+#wrapper.clubs #clubs {
+  position: relative;
+}
+#wrapper.clubs #clubs:after {
+  width: 120%;
+  position: absolute;
+  left: -30px;
+  height: 300px;
+  bottom: -45px;
+  background: white;
+  border-bottom: 5px solid #f29400;
+  -ms-transform: rotate(-3deg);
+      transform: rotate(-3deg);
+  z-index: -1;
+  box-shadow: 0 0 25px 0px black;
+}
+#wrapper.clubs #clubs p {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+#wrapper.clubs #clubs .clubs {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /*.club:nth-child(n) a{
+                flex-direction: row;
+            }
+
+            .club:nth-child(2n) a{
+                flex-direction: row-reverse;
+            }*/
 }
-#wrapper.clubs section[role="main"] > section aside nav ul {
-  padding: 0;
-  margin: 0;
+#wrapper.clubs #clubs .clubs a {
+  text-decoration: none;
+  color: inherit;
+  display: -ms-flexbox;
+  display: flex;
 }
-#wrapper.clubs section[role="main"] > section aside nav ul li {
-  display: block;
-  padding: 0;
-  margin: 10px 0;
-  width: 300px;
-  height: 60px;
-  background: #f29400;
-  line-height: 60px;
+#wrapper.clubs #clubs .clubs .club {
+  width: 50%;
+  box-sizing: border-box;
+  height: 140px;
   text-align: center;
   color: white;
-  font-family: 'sansationregular', sans-serif, 'Droid serif', serif;
-  text-transform: uppercase;
-  font-size: 20px;
+  font-family: 'sansationregular', sans-serif;
+  font-size: 30px;
   position: relative;
   overflow: hidden;
-  transition: all .5s ease;
 }
-#wrapper.clubs section[role="main"] > section aside nav ul li > a {
-  position: relative;
-  z-index: 2;
-  display: block;
-  color: inherit;
-  text-decoration: none;
+@media screen and (max-width: 1000px) {
+  #wrapper.clubs #clubs .clubs .club {
+    width: 100%;
+  }
 }
-#wrapper.clubs section[role="main"] > section aside nav ul li:hover {
-  color: #f29400;
-}
-#wrapper.clubs section[role="main"] > section aside nav ul li:hover::before {
-  left: 0;
-}
-#wrapper.clubs section[role="main"] > section aside nav ul li::before {
-  content: '';
+#wrapper.clubs #clubs .clubs .club .faceA {
+  width: 100%;
+  height: 140px;
   position: absolute;
-  width: 300px;
-  height: 60px;
-  background: white;
-  left: -300px;
-  transition: all .5s ease;
+  z-index: 2;
+  left: 0%;
+  line-height: 140px;
+  background: #f29400;
+  background-size: contain;
+  text-shadow: 0 0 10px black;
+  font-weight: bold;
 }
-#wrapper.clubs section[role="main"] .content {
-  width: 700px;
-  background: white;
-  border: 1px solid grey;
-  margin: 10px;
+#wrapper.clubs #clubs .clubs .club .faceB {
+  top: 0;
+  width: 100%;
+  height: 140px;
+  position: absolute;
+  z-index: 1;
+  left: 100%;
+  background: #f29400;
+  font-size: 17px;
+  text-align: center;
+  overflow: hidden;
+  padding: 2px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+#wrapper.clubs #clubs .clubs .club .faceB p {
+  display: block;
+  padding: 0 20px;
+}
+#wrapper.clubs #clubs .clubs .club .faceA,
+#wrapper.clubs #clubs .clubs .club .faceB {
+  transition: left ease .8s;
+}
+#wrapper.clubs #clubs .clubs .club:hover .faceA {
+  left: -100%;
+}
+#wrapper.clubs #clubs .clubs .club:hover .faceB {
+  left: 0%;
 }
 #wrapper.club {
   background: #f1f1f1;
