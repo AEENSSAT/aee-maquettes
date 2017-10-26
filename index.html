@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="./Assets/fonts/sansation.css">
     <link rel="stylesheet" href="./Assets/fonts/prisma.css">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <title></title>
 </head>
 <body>
@@ -41,7 +45,39 @@
         </header>
 
         <section id="presentation">
+            <div class="slider">
+               <div class="slide">
+                   <div class="round-image" style="background-image: url('./Assets/build/imgs/background.jpg')">
 
+                   </div>
+                   <div>
+                       <h2>L'AEE, qu'est ce que c'est ?</h2>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, sit eveniet esse aperiam minima, unde tenetur quam beatae minus consequuntur natus iure suscipit fugiat, in praesentium. Est laudantium ullam vero! placeat quam tenetur exercitationem aperiam nam hic eaque deleniti dolore cum, quia accusamus repellendus quibusdam ipsam impedit suscipit id molestias autem, nemo. Rem dolorum eos, praesentium consequuntur, omnis laborum.</p>
+                       <a href="" class="button-like">Plus d'infos</a>
+                   </div>
+               </div>
+               <div class="slide">
+                   <div class="round-image" style="background-image: url('./Assets/build/imgs/background.jpg')">
+
+                   </div>
+                   <div>
+                       <h2>L'AEE, qu'est ce que c'est ?</h2>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, sit eveniet esse aperiam minima, unde tenetur quam beatae minus consequuntur natus iure suscipit fugiat, in praesentium. Est laudantium ullam vero! placeat quam tenetur exercitationem aperiam nam hic eaque deleniti dolore cum, quia accusamus repellendus quibusdam ipsam impedit suscipit id molestias autem, nemo. Rem dolorum eos, praesentium consequuntur, omnis laborum.</p>
+                       <a href="" class="button-like">Plus d'infos</a>
+                   </div>
+               </div>
+               <div class="slide">
+                   <div class="round-image" style="background-image: url('./Assets/build/imgs/background.jpg')">
+
+                   </div>
+                   <div>
+                       <h2>L'AEE, qu'est ce que c'est ?</h2>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, sit eveniet esse aperiam minima, unde tenetur quam beatae minus consequuntur natus iure suscipit fugiat, in praesentium. Est laudantium ullam vero! placeat quam tenetur exercitationem aperiam nam hic eaque deleniti dolore cum, quia accusamus repellendus quibusdam ipsam impedit suscipit id molestias autem, nemo. Rem dolorum eos, praesentium consequuntur, omnis laborum.</p>
+                       <a href="" class="button-like">Plus d'infos</a>
+                   </div>
+               </div>
+
+            </div>
         </section>
 
         <section id="actus">
@@ -219,6 +255,10 @@
             itemSelector: '.grid-item',
             gutter: 10,
             horizontalOrder: true
+        });
+
+        $(document).ready(function(){
+          $('.slider').bxSlider();
         });
 
         //Sticky header
