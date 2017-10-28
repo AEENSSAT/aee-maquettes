@@ -509,6 +509,11 @@ body {
   overflow: hidden;
   position: relative;
 }
+@media (max-width: 1100px) {
+  #wrapper.categories section[role="main"] header {
+    height: auto;
+  }
+}
 #wrapper.categories section[role="main"] header img.head {
   width: 100%;
 }
@@ -528,6 +533,12 @@ body {
   top: -300px;
   width: 1100px;
 }
+@media (max-width: 1100px) {
+  #wrapper.categories section[role="main"] .content {
+    width: 100%;
+    position: static;
+  }
+}
 #wrapper.categories section[role="main"] .content h2 {
   font-size: 70px;
   text-align: center;
@@ -542,6 +553,11 @@ body {
   height: 500px;
   overflow: hidden;
   position: relative;
+}
+@media (max-width: 1100px) {
+  #wrapper.article section[role="main"] header {
+    height: auto;
+  }
 }
 #wrapper.article section[role="main"] header img.head {
   width: 100%;
@@ -561,6 +577,12 @@ body {
   -ms-flex-pack: center;
       justify-content: center;
 }
+@media (max-width: 1100px) {
+  #wrapper.article section[role="main"] .content {
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+  }
+}
 #wrapper.article section[role="main"] .content article h2 {
   font-family: 'sansationregular', sans-serif;
   font-weight: 700;
@@ -574,6 +596,11 @@ body {
   margin-top: 0;
   color: #f29400;
 }
+@media (max-width: 450px) {
+  #wrapper.article section[role="main"] .content article h2 {
+    font-size: 50px;
+  }
+}
 #wrapper.article section[role="main"] .content article .centerDiv {
   background: white;
   position: relative;
@@ -581,6 +608,12 @@ body {
   border-radius: 2px;
   top: -300px;
   width: 800px;
+}
+@media (max-width: 1100px) {
+  #wrapper.article section[role="main"] .content article .centerDiv {
+    position: static;
+    width: 98%;
+  }
 }
 #wrapper.article section[role="main"] .content article .centerDiv h3 {
   font-size: 30px;
@@ -600,9 +633,20 @@ body {
   width: 700px;
   margin: auto;
 }
+@media (max-width: 1100px) {
+  #wrapper.article section[role="main"] .content article .centerDiv p {
+    width: auto;
+  }
+}
 #wrapper.article section[role="main"] .content aside {
   width: 300px;
   padding: 15px;
+}
+@media (max-width: 1100px) {
+  #wrapper.article section[role="main"] .content aside {
+    width: 100%;
+    padding: 0;
+  }
 }
 #wrapper.article section[role="main"] .content aside .aside-part {
   background: white;
@@ -610,6 +654,13 @@ body {
   margin: 10px;
   border-radius: 2px;
   padding: 5px;
+  box-sizing: border-box;
+}
+@media (max-width: 1100px) {
+  #wrapper.article section[role="main"] .content aside .aside-part {
+    width: 98%;
+    margin: 10px auto;
+  }
 }
 #wrapper.clubs {
   background-size: cover;
@@ -618,6 +669,11 @@ body {
   height: 500px;
   overflow: hidden;
   position: relative;
+}
+@media (max-width: 1100px) {
+  #wrapper.clubs section[role=main] header {
+    height: auto;
+  }
 }
 #wrapper.clubs section[role=main] header img.head {
   width: 100%;
@@ -628,15 +684,6 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-}
-#wrapper.clubs section[role=main] #clubs {
-  background: white;
-  position: relative;
-  border: 1px solid grey;
-  border-radius: 2px;
-  width: 1000px;
-  margin: auto;
-  top: -300px;
 }
 #wrapper.clubs h2 {
   font-size: 70px;
@@ -657,7 +704,19 @@ body {
   margin: auto;
 }
 #wrapper.clubs #clubs {
+  background: white;
   position: relative;
+  border: 1px solid grey;
+  border-radius: 2px;
+  width: 1000px;
+  margin: auto;
+  top: -300px;
+}
+@media (max-width: 1100px) {
+  #wrapper.clubs #clubs {
+    width: 100%;
+    position: static;
+  }
 }
 #wrapper.clubs #clubs:after {
   width: 120%;
@@ -898,6 +957,12 @@ body {
   text-align: center;
   border: 1px solid grey;
   padding-bottom: 50px;
+  box-sizing: border-box;
+}
+@media (max-width: 450px) {
+  #wrapper.login section[role="main"] .login-form {
+    width: 100%;
+  }
 }
 #wrapper.login section[role="main"] .login-form h2 {
   font-family: 'sansationbold', sans-serif;
@@ -913,6 +978,11 @@ body {
   box-sizing: border-box;
   font-family: 'sansationregular', sans-serif;
   font-size: 20px;
+}
+@media (max-width: 450px) {
+  #wrapper.login section[role="main"] .login-form input {
+    width: 98%;
+  }
 }
 #wrapper.login section[role="main"] .login-form input[type="submit"] {
   background: white;
@@ -946,6 +1016,11 @@ body {
 }
 .grid-articles.grid-articles-3 article {
   width: calc(33.33333333%);
+}
+@media (max-width: 1100px) {
+  .grid-articles.grid-articles-3 article {
+    width: calc(50%);
+  }
 }
 .grid-articles.grid-articles-4 article {
   width: calc(25%);

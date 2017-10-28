@@ -23,6 +23,9 @@
     &.grid-articles-3 {
         article {
             width: calc(100% / 3);
+            @media (max-width: @screen-md-max) {
+                width: calc(100% / 2);
+            }
         }
     }
 
