@@ -1,0 +1,97 @@
+#wrapper {
+    & > header {
+        height: 100px;
+        width: 100%;
+        background: #f1f1f1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid @orange;
+
+        @media (max-width: @screen-md-max) {
+            height: auto;
+            flex-direction: column;
+        }
+
+        &.sticky {
+            position: fixed;
+            z-index: 50;
+            top: 0;
+
+            height: 50px;
+        }
+
+        &.detached {
+            position: static;
+        }
+
+        & > img {
+            height: 100%;
+            margin-left: 15px;
+
+            @media (max-width: @screen-md-max) {
+                height: 200px;
+            }
+
+        }
+        & > nav {
+
+            @media (max-width: @screen-md-max) {
+                width: 100%;
+            }
+
+            & > ul {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                text-transform: uppercase;
+
+                @media (max-width: @screen-md-max) {
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+                & > li {
+                    margin: 0 15px;
+                    @height: 50px;
+
+                    height: @height;
+                    line-height: @height;
+
+                    @media (max-width: @screen-md-max) {
+                        text-align: center;
+                    }
+
+                    & > a {
+                        display: inline-block;
+                        color: @grey;
+                        font-family: @sansationRegular;
+                        text-decoration: none;
+                        font-size: 20px;
+                        position: relative;
+                        overflow: hidden;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            height: 1px;
+                            background: @orange;
+                            bottom: 0px;
+                            width: 100%;
+                            left: -100%;
+                            transition: left .5s ease;
+                        }
+                        &:hover {
+                            &::before {
+                                left: 0%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

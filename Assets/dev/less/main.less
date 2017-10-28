@@ -9,13 +9,19 @@
 @prismaRegular: 'prismaregular', sans-serif;
 @roboto: 'roboto', sans-serif;
 
+
+@screen-md-max: 1100px;
+@screen-xs-max: 450px;
+
+
 /** ********* **/
 
 html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .txt{
@@ -31,6 +37,10 @@ html, body {
 .centerDiv {
     width: 1000px;
     margin: auto;
+
+    @media (max-width: @screen-md-max) {
+        width: 100%;
+    }
 }
 
 #landing {
@@ -44,6 +54,15 @@ html, body {
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    box-sizing: border-box;
+
+    @media (max-width: @screen-md-max) {
+        position: static;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        border-bottom: 5px solid @orange;
+    }
 
     #title {
         font-size: 80px;
@@ -51,12 +70,27 @@ html, body {
         font-family: @sansationRegular, sans-serif;
         font-weight: normal;
         color: white;
+
+        @media (max-width: @screen-md-max) {
+            margin: 20px 10px;
+            font-size: 65px;
+        }
+
+        @media (max-width: @screen-xs-max) {
+            margin: 20px 10px;
+            font-size: 45px;
+        }
     }
 
     nav {
         height: 100%;
         width: 35%;
         position: relative;
+
+        @media (max-width: @screen-md-max) {
+            width: 100%;
+            height: auto;
+        }
 
         ul {
             padding: 0;
@@ -82,6 +116,10 @@ html, body {
                 font-size: 35px;
                 text-transform: uppercase;
                 transition: all .5s ease;
+
+                @media (max-width: @screen-xs-max) {
+                    font-size: 15px;
+                }
 
                 &:hover{
                     padding-right: 35px;
@@ -122,89 +160,40 @@ html, body {
 
 /*********/
 
-
-
-#wrapper {
-    & > header {
-        height: 100px;
-        width: 100%;
-        background: #f1f1f1;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid @orange;
-
-        &.sticky {
-            position: fixed;
-            z-index: 50;
-            top: 0;
-
-            height: 50px;
-        }
-
-        &.detached {
-            position: static;
-        }
-
-        & > img {
-            height: 100%;
-            margin-left: 15px;
-        }
-        & > nav {
-            & > ul {
-                padding: 0;
-                margin: 0;
-                list-style-type: none;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                text-transform: uppercase;
-                & > li {
-                    margin: 0 15px;
-                    & > a {
-                        display: inline-block;
-                        color: @grey;
-                        font-family: @sansationRegular;
-                        text-decoration: none;
-                        font-size: 20px;
-                        position: relative;
-                        overflow: hidden;
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            height: 1px;
-                            background: @orange;
-                            bottom: 0px;
-                            width: 100%;
-                            left: -100%;
-                            transition: left .5s ease;
-                        }
-                        &:hover {
-                            &::before {
-                                left: 0%;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 #wrapper.homepage {
     position: absolute;
     top: 100vh;
     width: 100%;
+
+    & > header {
+        @media (max-width: @screen-md-max) {
+            display: none;
+        }
+    }
+
     & > #presentation {
         height: 75vh;
         background-image: linear-gradient(to bottom, rgba(55, 55, 55, 0.8), rgba(55, 55, 55, 0.8)), url('../imgs/ploumanach.jpg');
         background-size: cover;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: @screen-md-max) {
+            height: auto;
+        }
+
+
         .bx-wrapper {
             border: none;
             background: transparent;
             box-shadow: none;
+            margin-bottom: 0 !important;
+
+            @media (max-width: @screen-md-max) {
+                margin-bottom: 0;
+            }
         }
 
         .bx-pager {
@@ -221,7 +210,6 @@ html, body {
 
 
             div.slide {
-                height: 75vh;
                 background: transparent;
 
                 display: flex;
@@ -229,16 +217,34 @@ html, body {
                 justify-content: center;
                 align-items: center;
 
+                @media (max-width: @screen-md-max) {
+                    height: auto;
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+
                 .round-image {
-                    width: 500px;
-                    height: 500px;
+                    min-width: 500px;
+                    min-height: 500px;
                     border: 7px solid @orange;
                     border-radius: 1000px;
                     background-size: cover;
 
+                    @media (max-width: @screen-md-max) {
+                        min-width: 200px;
+                        min-height: 200px;
+                        margin-top: 20px;
+                    }
+
                     &+div {
                         width: 800px;
                         margin: 40px;
+
+                        @media (max-width: @screen-md-max) {
+                            width: 100%;
+                            text-align: center;
+                        }
 
                         h2 {
                             color: @orange;
@@ -251,6 +257,7 @@ html, body {
                             font-family: Georgia, 'Droid serif', serif;
                             font-size: 22px;
                             line-height: 1.5em;
+                            padding: 5px;
                         }
 
                         a.button-like {
@@ -266,6 +273,11 @@ html, body {
                             text-align: center;
                             background: transparent;
                             transition: background .3s ease;
+
+                            @media (max-width: @screen-md-max) {
+                                margin: 0 auto;
+                            }
+
                             &:hover {
                                 background: @orange;
                             }
@@ -287,13 +299,27 @@ html, body {
             font-family: @prismaRegular;
             font-weight: normal;
             color: @orange;
+
+            @media (max-width: @screen-md-max) {
+                font-size: 40px;
+            }
         }
         article {
             display: inline-block;
             position: relative;
-            margin: 7px 0;
+            border: 7px solid @lightgrey;
             border-radius: 1px;
-            width: 24%;
+            box-sizing: border-box;
+            width: calc(100% / 4);
+
+            @media (max-width: @screen-md-max) {
+                width: calc(100% / 3);
+            }
+
+            @media (max-width: @screen-xs-max) {
+                width: calc(100% / 2);
+            }
+
             &:nth-child(3n) {
                 color: @orange;
                 background: @white;
@@ -349,12 +375,18 @@ html, body {
             }
         }
         .centerDiv {
+
+            @media (max-width: @screen-md-max) {
+                width: auto;
+            }
+
             .buttons {
                 text-align: center;
             }
             a.more-actus {
                 display: inline-block;
                 border: 2px solid @orange;
+                box-sizing: border-box;
                 width: 45%;
                 height: 45px;
                 text-align: center;
@@ -369,6 +401,12 @@ html, body {
                     background: @orange;
                     color: @white;
                 }
+
+                @media (max-width: @screen-md-max) {
+                    display: block;
+                    width: 90%;
+                    margin: 10px auto;
+                }
             }
         }
     }
@@ -382,37 +420,57 @@ html, body {
             & > div {
                 width: 50%;
             }
+
+            @media (max-width: @screen-md-max) {
+                flex-direction: column;
+
+                & > div {
+                    width: 100%;
+                }
+            }
+
         }
         h2 {
             font-family: @sansationRegular;
             color: @white;
         }
         .form {
+
+            @media (max-width: @screen-md-max) {
+                text-align: center;
+            }
+
             input {
                 display: block;
             }
             input[type=text] {
-                font-family: @sansationRegular;
-                width: 400px;
                 margin: 10px 0;
                 border: 3px solid @orange;
                 height: 35px;
                 padding: 4px;
             }
             input[type=email] {
-                font-family: @sansationRegular;
-                width: 400px;
                 margin: 10px 0;
                 border: 3px solid @orange;
                 height: 35px;
                 padding: 4px;
             }
             textarea {
-                font-family: @sansationRegular;
-                width: 400px;
                 margin: 10px 0;
                 border: 3px solid @orange;
             }
+
+            input[type=text], input[type=email], textarea {
+                font-family: @sansationRegular;
+                width: 400px;
+
+                @media (max-width: @screen-md-max) {
+                    width: 90%;
+                    margin: 10px auto;
+                    box-sizing: border-box;
+                }
+            }
+
             input[type=submit] {
                 height: 35px;
                 padding: 4px;
@@ -422,6 +480,12 @@ html, body {
                 padding: 2px 10px;
                 font-family: @sansationRegular;
                 transition: all .5s ease;
+
+                @media (max-width: @screen-md-max) {
+                    width: 90%;
+                    margin: auto;
+                }
+
                 &:hover {
                     background: @orange;
                     color: @white;
@@ -436,3 +500,5 @@ html, body {
 @import "clubs";
 @import "club";
 @import "login";
+@import "grid-articles";
+@import "menu";
